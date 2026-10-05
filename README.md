@@ -47,13 +47,17 @@ rustoreappupdate.get_appupdateinfo()
 
 ## Обновление с GitFlic
 
-1. `git clone https://gitflic.ru/project/rustore/rustore-defold-appupdate.git`, взять `master` или тег.
-2. Заменить `extension_rustore_appupdate` на `appupdate_example/extension_rustore_appupdate` и повторить отличия
-   выше.
-3. Версия `core` в `versions.json` новее нашей — сначала обновить
-   [defold-rustore-core](https://github.com/maningame/defold-rustore-core) и ссылку на него в `game.project`.
-4. Коммит `build: rustore appupdate <версия>`, тег — версия SDK. Наша правка поверх той же версии — тег
-   `<версия>-1`.
+Скриптом `tools/rustore.js` из клона defold-kb рядом с этой репой; по шагам — скилл `/rustore-update`.
+
+```
+node tools/rustore.js check                   # что нового у RuStore
+node tools/rustore.js update appupdate        # папка с GitFlic поверх наших отличий
+node tools/rustore.js verify --bob <bob.jar>  # сборка под Linux, Windows, macOS и Android
+```
+
+Откуда снята папка — `gitflic.json`. Отличия от GitFlic скрипт переносит трёхсторонним слиянием, конфликт —
+только там, где RuStore поменял те же строки. Тег — версия SDK, наша правка поверх той же версии —
+`<версия>-1`, `<версия>-2`.
 
 ## Лицензия
 

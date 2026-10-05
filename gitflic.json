@@ -1,0 +1,7 @@
+{
+  "project": "rustore-defold-appupdate",
+  "path": "appupdate_example/extension_rustore_appupdate",
+  "commit": "03c35e54e2370e35e36f85fea50717a556011934",
+  "ref": "master",
+  "version": "10.5.1"
+}
